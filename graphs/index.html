@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>graphs - MkLorum</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">MkLorum</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Maze/" class="nav-link">Maze</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../lists/" class="nav-link">List</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../arrays/" class="nav-link">arrays</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../linked%20lists/" class="nav-link">linked lists</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stack/" class="nav-link">stack</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../queues/" class="nav-link">queues</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../trees/" class="nav-link">trees</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">graphs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../sets/" class="nav-link">sets</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../hash%20tables/" class="nav-link">hash tables</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../trees/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../sets/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/KingOfPhrygia/MazeFull/edit/master/docs/graphs.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#graphs" class="nav-link">Graphs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#basic-terminology" class="nav-link">Basic Terminology</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#types-of-graphs" class="nav-link">Types of Graphs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#graph-operations" class="nav-link">Graph Operations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="graphs">Graphs</h1>
+<p>Graphs are a type of non-linear data structure that consist of a set of vertices (also called nodes) and a set of edges that connect them. Graphs can be used to represent a wide range of relationships and connections between objects, such as social networks, transportation networks, and computer networks.</p>
+<h1 id="basic-terminology">Basic Terminology</h1>
+<p>Before we dive into the different types of graphs and their operations, let's define some basic terminology:</p>
+<ul>
+<li>Vertex (or Node): A single element in the graph that represents an object.</li>
+<li>Edge: A connection between two vertices that represents a relationship or connection between the objects they represent.</li>
+<li>Degree: The number of edges incident to a vertex.</li>
+<li>Path: A sequence of vertices connected by edges.</li>
+<li>Cycle: A path that starts and ends at the same vertex.</li>
+<li>Connected: A graph is connected if there is a path between any two vertices in the graph.</li>
+<li>Weighted: A graph is weighted if each edge has a numerical weight or cost associated with it.</li>
+<li>Directed: A graph is directed if the edges have a direction, meaning that each edge goes from one vertex (the source) to another vertex (the destination).</li>
+</ul>
+<h1 id="types-of-graphs">Types of Graphs</h1>
+<p>There are several types of graphs, each with its own unique properties and algorithms:</p>
+<ul>
+<li>Undirected Graphs: A graph where each edge is bidirectional, meaning that you can travel from vertex A to vertex B and vice versa. In an undirected graph, the edges are represented as unordered pairs of vertices.</li>
+<li>Directed Graphs (Digraphs): A graph where each edge has a direction, meaning that you can travel from vertex A to vertex B but not necessarily from B to A. In a directed graph, the edges are represented as ordered pairs of vertices.</li>
+<li>Weighted Graphs: A graph where each edge has a numerical weight or cost associated with it. Weighted graphs are often used to model problems where there are costs or distances associated with traveling between vertices.</li>
+<li>Connected Graphs: A graph where there is a path between any two vertices in the graph. Connected graphs are often used to model networks where all the vertices are reachable from each other.</li>
+<li>Acyclic Graphs: A graph with no cycles, meaning that there is no path that starts and ends at the same vertex. Acyclic graphs are often used to model hierarchical relationships or dependencies between objects.</li>
+<li>Bipartite Graphs: A graph where the vertices can be partitioned into two sets such that all edges connect a vertex from one set to a vertex from the other set. Bipartite graphs are often used to model relationships between two distinct types of objects.</li>
+</ul>
+<h1 id="graph-operations">Graph Operations</h1>
+<p>There are several operations that can be performed on graphs, including:</p>
+<ul>
+<li>Insertion: Add a new vertex or edge to the graph.</li>
+<li>Traversal: Traverse the graph in a specific order, such as breadth-first or depth-first.</li>
+<li>Search: Find a specific vertex or edge in the graph.</li>
+<li>Shortest Path: Find the shortest path between two vertices in the graph.</li>
+<li>Minimum Spanning Tree: Find a tree that connects all the vertices in the graph with the minimum total weight.</li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<p>Graphs are a powerful and flexible data structure that can be used to model a wide range of problems and relationships. Whether you're working with undirected graphs, directed graphs, weighted graphs, or any other type of graph, it's important to understand the basic terminology and operations that can be performed on them. By using graphs effectively, you can build efficient and elegant algorithms that solve complex problems.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
