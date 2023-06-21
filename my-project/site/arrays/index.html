@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>arrays - MkLorum</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">MkLorum</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Maze/" class="nav-link">Maze</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../lists/" class="nav-link">List</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">arrays</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../linked%20lists/" class="nav-link">linked lists</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stack/" class="nav-link">stack</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../queues/" class="nav-link">queues</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../trees/" class="nav-link">trees</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../graphs/" class="nav-link">graphs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../sets/" class="nav-link">sets</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../hash%20tables/" class="nav-link">hash tables</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../lists/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../linked%20lists/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/KingOfPhrygia/MazeFull/edit/master/docs/arrays.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#arrays" class="nav-link">Arrays</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#creating-an-array" class="nav-link">Creating an Array</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#accessing-elements" class="nav-link">Accessing Elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#modifying-elements" class="nav-link">Modifying Elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#array-methods" class="nav-link">Array Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="arrays">Arrays</h1>
+<p>In Python, there is no built-in data structure called "array". However, the Python standard library provides a module called array that allows you to create arrays of numeric values.</p>
+<h1 id="creating-an-array">Creating an Array</h1>
+<p>To create an array, you need to import the array module and call its array() function, passing in a type code and an iterable containing the initial values of the array. Here's an example:</p>
+<ul>
+<li>python Code
+import array
+Create an array of integers
+numbers = array.array('i', [1, 2, 3, 4, 5])
+print(numbers)   Output: array('i', [1, 2, 3, 4, 5])</li>
+</ul>
+<p>Create an array of floats
+floats = array.array('f', [1.0, 2.0, 3.0, 4.0, 5.0])
+print(floats)  Output: array('f', [1.0, 2.0, 3.0, 4.0, 5.0])
+The first argument to the array() function is a type code that specifies the data type of the elements in the array. For example, the 'i' type code indicates that the array contains integers, while the 'f' type code indicates that the array contains floats. You can find a list of type codes in the Python documentation.</p>
+<h1 id="accessing-elements">Accessing Elements</h1>
+<p>You can access individual elements of an array using indexing, just like with a list. Here's an example:</p>
+<ul>
+<li>python Code
+numbers = array.array('i', [1, 2, 3, 4, 5])
+print(numbers[0])  # Output: 1
+print(numbers[2])  # Output: 3</li>
+</ul>
+<h1 id="modifying-elements">Modifying Elements</h1>
+<p>You can modify elements of an array using indexing and assignment. Here's an example:</p>
+<ul>
+<li>python Code
+numbers = array.array('i', [1, 2, 3, 4, 5])
+numbers[0] = 10
+numbers[2] = 30
+print(numbers)  # Output: array('i', [10, 2, 30, 4, 5])</li>
+</ul>
+<h1 id="array-methods">Array Methods</h1>
+<p>The array module provides several methods for manipulating arrays. Here are some of the most commonly used methods:</p>
+<ul>
+<li>append(x): Add an element x to the end of the array.</li>
+<li>extend(iterable): Append the elements from an iterable to the end of the array.</li>
+<li>insert(i, x): Insert an element x at position i.</li>
+<li>remove(x): Remove the first occurrence of element x from the array.</li>
+<li>pop(i): Remove and return the element at position i.</li>
+<li>index(x): Return the index of the first occurrence of element x.</li>
+<li>count(x): Return the number of occurrences of element x.</li>
+<li>reverse(): Reverse the order of the elements in the array.</li>
+<li>sort(): Sort the elements in the array.</li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<p>Arrays are a data structure in Python that allow you to store collections of numeric values. They are similar to lists, but are more efficient for numerical computations. The array module provides a simple way to create and manipulate arrays in Python.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+site_name: MkLorum
+repo_url: https://github.com/KingOfPhrygia/MazeFull
+
+nav:
+    - Home: index.md
+    - Maze: Maze.md
+    - List: lists.md 
+    - arrays: arrays.md 
+    - linked lists: linked lists.md
+    - stack: stack.md
+    - queues: queues.md
+    - trees: trees.md
+    - graphs: graphs.md
+    - sets: sets.md
+    - hash tables: hash tables.md
+    - About: about.md
+    
