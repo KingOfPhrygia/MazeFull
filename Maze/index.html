@@ -143,7 +143,7 @@
 <p>After the while loop, a copy of the "path" string is created, named "path2." This copy undergoes some modifications to remove any unnecessary back-and-forth movements by replacing occurrences of 'EW,' 'WE,' 'NS,' or 'SN' with an empty string.</p>
 <p>The "wallFollower()" function returns two paths: "path," which represents the complete path taken by the left-hand follower algorithm, and "path2," which represents the simplified path without back-and-forth movements.</p>
 <p>In the main section of the code, a maze object with a size of 5x5 is created. The maze is loaded from a CSV file using the "CreateMaze()" method.</p>
-<p>An agent object, named "b," is created to represent the agent in the maze. It is assigned the shape 'arrow' and the color green.</p>
+<p>n agent object, named "b," is created to represent the agent in the maze. It is assigned the shape 'arrow' and the color green.</p>
 <p>The "wallFollower()" function is called with the maze object as an argument, and the returned paths are assigned to "path" and "path2."</p>
 <p>The simplified path, "path2," is then traced in the maze using the "tracePath()" method of the maze object. The agent "b" follows the path represented by "path2."</p>
 <p>The complete path, "path," is printed.</p>
