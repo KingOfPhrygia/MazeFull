@@ -102,10 +102,10 @@ In summary, this code utilizes the "Left-hand follower" algorithm to solve mazes
         myMaze=maze(5,5)
         myMaze.CreateMaze(loadMaze= "maze--2023-06-12--19-28-11.csv")
 
-        # a=agent(myMaze,shape='arrow',footprints=True)
+        a=agent(myMaze,shape='arrow',footprints=True)
         b=agent(myMaze,shape='arrow',color=COLOR.green)
         path,path2=wallFollower(myMaze)
-        # myMaze.tracePath({a:path})
+        myMaze.tracePath({a:path})
         myMaze.tracePath({b:path2})
 
         print(path)
