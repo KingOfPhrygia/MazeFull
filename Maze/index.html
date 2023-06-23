@@ -132,55 +132,23 @@
 
 <h1 id="nics-maze-help">Nic's Maze Help</h1>
 <h2 id="maze-info">Maze Info.</h2>
-<p>The Maze Code is a program that implements a maze-solving algorithm known as the "Left-hand follower" algorithm. Here's an explanation of the code:</p>
-<ol>
-<li>
-<p>The code begins by importing the necessary modules: <code>maze</code>, <code>agent</code>, and <code>COLOR</code> from the <code>pyamaze</code> package.</p>
-</li>
-<li>
-<p>Two functions, <code>RCW()</code> and <code>RCCW()</code>, are defined. These functions rotate the directions based on the current direction. <code>RCW()</code> rotates the directions in a clockwise manner, and <code>RCCW()</code> rotates them in a counter-clockwise manner.</p>
-</li>
-<li>
-<p>The <code>moveForward()</code> function takes a cell coordinate as input and returns the new cell coordinate and the direction the agent is facing after moving forward based on the current direction.</p>
-</li>
-<li>
-<p>The <code>wallFollower()</code> function is the main algorithm implementation. It initializes the <code>direction</code> dictionary with initial directions ('forward', 'left', 'back', 'right') set to ('N', 'W', 'S', 'E'). It also initializes the <code>currCell</code> variable with the bottom-right cell coordinate of the maze.</p>
-</li>
-<li>
+<p>The Python Maze code is a program that solves mazes using an algorithm called the "Left-hand follower" algorithm. Let's break down how it works:</p>
+<p>First, the code imports some necessary modules from a package called "pyamaze." These modules include "maze," "agent," and "COLOR."</p>
+<p>Next, two functions are defined: "RCW()" and "RCCW()." These functions are responsible for rotating the directions based on the current direction. "RCW()" rotates the directions in a clockwise manner, while "RCCW()" rotates them counter-clockwise.</p>
+<p>The "moveForward()" function takes a cell coordinate as input and determines the new cell coordinate and the direction the agent will be facing after moving forward, based on the current direction.</p>
+<p>The main algorithm is implemented in the "wallFollower()" function. It starts by initializing a dictionary called "direction" with the initial directions: 'forward,' 'left,' 'back,' and 'right,' set to 'N,' 'W,' 'S,' and 'E' respectively. Additionally, the variable "currCell" is initialized with the coordinate of the bottom-right cell in the maze.</p>
 <p>Inside a while loop, the algorithm checks if the current cell is the starting cell (top-left). If it is, the loop breaks.</p>
-</li>
-<li>
-<p>The algorithm then checks if there is no wall on the left side of the current cell. If there is no wall, it further checks if there is no wall in the forward direction. If there is no wall, it calls the <code>RCW()</code> function. Otherwise, it moves forward to the next cell by calling the <code>moveForward()</code> function and appends the corresponding direction to the <code>path</code> string.</p>
-</li>
-<li>
-<p>If there is a wall on the left side, the algorithm calls the <code>RCCW()</code> function to rotate the directions in a counter-clockwise manner. It then moves forward and updates the current cell and appends the corresponding direction to the <code>path</code> string.</p>
-</li>
-<li>
-<p>After the while loop, the algorithm creates a copy of the <code>path</code> string called <code>path2</code>. It removes any occurrences of 'EW', 'WE', 'NS', or 'SN' from <code>path2</code> using the <code>replace()</code> method. This step ensures that the path does not contain unnecessary back-and-forth movements.</p>
-</li>
-<li>
-<p>The <code>wallFollower()</code> function returns two paths: <code>path</code>, which represents the complete path taken by the left-hand follower algorithm, and <code>path2</code>, which represents the simplified path without back-and-forth movements.</p>
-</li>
-<li>
-<p>In the main section of the code, a <code>maze</code> object is created with a size of 5x5. The maze is loaded from a CSV file using the <code>CreateMaze()</code> method.</p>
-</li>
-<li>
-<p>An <code>agent</code> object, <code>b</code>, is created to represent the agent in the maze. It is assigned the shape 'arrow' and the color green.</p>
-</li>
-<li>
-<p>The <code>wallFollower()</code> function is called with the maze object as an argument, and the returned paths are assigned to <code>path</code> and <code>path2</code>.</p>
-</li>
-<li>
-<p>The simplified path (<code>path2</code>) is traced in the maze using the <code>tracePath()</code> method of the maze object, with the agent <code>b</code> and <code>path2</code> as the input.</p>
-</li>
-<li>
-<p>The <code>path</code> string representing the complete path is printed.</p>
-</li>
-<li>
-<p>Finally, the maze is run using the <code>run()</code> method of the maze object, which displays the maze with the agent following the path.</p>
-</li>
-</ol>
-<p>Overall, this code implements the "Left-hand follower" algorithm to solve a maze and displays the path taken by the algorithm in the maze visualization.</p>
+<p>The algorithm then checks if there is no wall on the left side of the current cell. If there is no wall, it further checks if there is also no wall in the forward direction. If there is no wall, it calls the "RCW()" function to rotate the directions. Otherwise, it moves forward to the next cell by calling the "moveForward()" function and adds the corresponding direction to the "path" string.</p>
+<p>If there is a wall on the left side, the algorithm calls the "RCCW()" function to rotate the directions in a counter-clockwise manner. Then, it moves forward, updates the current cell, and appends the corresponding direction to the "path" string.</p>
+<p>After the while loop, a copy of the "path" string is created, named "path2." This copy undergoes some modifications to remove any unnecessary back-and-forth movements by replacing occurrences of 'EW,' 'WE,' 'NS,' or 'SN' with an empty string.</p>
+<p>The "wallFollower()" function returns two paths: "path," which represents the complete path taken by the left-hand follower algorithm, and "path2," which represents the simplified path without back-and-forth movements.</p>
+<p>In the main section of the code, a maze object with a size of 5x5 is created. The maze is loaded from a CSV file using the "CreateMaze()" method.</p>
+<p>An agent object, named "b," is created to represent the agent in the maze. It is assigned the shape 'arrow' and the color green.</p>
+<p>The "wallFollower()" function is called with the maze object as an argument, and the returned paths are assigned to "path" and "path2."</p>
+<p>The simplified path, "path2," is then traced in the maze using the "tracePath()" method of the maze object. The agent "b" follows the path represented by "path2."</p>
+<p>The complete path, "path," is printed.</p>
+<p>Finally, the maze is run using the "run()" method of the maze object, which displays the maze with the agent following the path.</p>
+<p>In summary, this code utilizes the "Left-hand follower" algorithm to solve mazes. It calculates a path through the maze and provides both the complete path and a simplified version of the path without unnecessary back-and-forth movements. The maze and the agent's path are visualized for easy understanding.</p>
 <h1 id="maze">Maze</h1>
 <pre><code># The maze Works Well. ScreenShots are on the Document on BlackBoard
 </code></pre>
@@ -245,10 +213,10 @@ if __name__=='__main__':
     myMaze=maze(5,5)
     myMaze.CreateMaze(loadMaze= "maze--2023-06-12--19-28-11.csv")
 
-    # a=agent(myMaze,shape='arrow',footprints=True)
+    a=agent(myMaze,shape='arrow',footprints=True)
     b=agent(myMaze,shape='arrow',color=COLOR.green)
     path,path2=wallFollower(myMaze)
-    # myMaze.tracePath({a:path})
+    myMaze.tracePath({a:path})
     myMaze.tracePath({b:path2})
 
     print(path)
